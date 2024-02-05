@@ -8,7 +8,7 @@
         <TextBlock TextWrapping="Wrap" Margin="0,0,0,4"
                     Text="服务器使用RadminLAN或者链接与你们连接，若没有RadminLAN，请点击下载按钮，使用教程在群里" />
         <TextBlock TextWrapping="Wrap" Margin="0,0,0,10"
-                    Text="如果你是初次使用，建议先进行一次自动更新，若下载失败请到群内下载最新文件解压覆盖" />
+                    Text="如果你是初次使用，请先进行一次自动更新，若下载失败请到群内下载最新文件解压覆盖" />
         <TextBlock TextWrapping="Wrap" Margin="0,0,0,10"
                     Text="往更多内容请下滑" />
 	<local:MyIconTextButton Margin="0,4,0,8" Height="35" HorizontalAlignment="Center"
