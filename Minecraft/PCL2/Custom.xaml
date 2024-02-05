@@ -1,0 +1,127 @@
+<!-- 这是 PCL 的主页自定义文件。你可以通过修改这个文件来自定义 PCL 主页：添加文本、打开网页、启动游戏，等等。
+     如果你倒腾这个文件把 PCL 玩炸了，把这个文件直接删除就行了。
+     下列内容均基于 WPF 框架。你可以在继续之前先尝试自学 XAML 与 WPF 的基础，这能让你更轻松地理解下列内容。
+     你也可以使用 Ctrl + F 快速查找。例如，若需要改变文本颜色，则搜索 “颜色” 即可。 -->
+
+<local:MyCard Title="服务器小工具" Margin="0,0,0,15" CanSwap="False" IsSwaped="False">
+    <StackPanel Margin="25,40,23,15">
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4"
+                    Text="服务器使用RadminLAN或者链接与你们连接，若没有RadminLAN，请点击下载按钮，使用教程在群里" />
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,10"
+                    Text="如果你是初次使用，建议先进行一次自动更新，若下载失败请到群内下载最新文件解压覆盖" />
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,10"
+                    Text="往更多内容请下滑" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <local:MyButton Grid.Column="0" Margin="0,0,10,0" Height="35"
+                        Text="下载RadminLAN" EventType="下载文件" EventData="https://download.radmin-lan.cn/download/files/Radmin_LAN_1.3.4570.5.exe" ToolTip="比较稳定的方式"/>
+            <local:MyButton Grid.Column="1" Margin="0,0,10,0" Height="35" ColorType="Highlight"
+                        Text="自动更新整合包" EventType="打开文件" EventData="aaa.jar"/>
+            <local:MyButton Grid.Column="2" Margin="0,0,10,0" Height="35" 
+                        Text="获取新的公告" EventType="刷新主页" ToolTip="获取新公告" />
+        </Grid>
+    </StackPanel>
+</local:MyCard>
+
+<local:MyCard Title="更新公告" Margin="0,0,0,15" CanSwap="True" IsSwaped="False">
+    <StackPanel Margin="25,40,23,15">
+        <local:MyHint Margin="0,8,0,2" IsWarn="False"
+                    Text="目前最新版本为Beta v1.0.0" />         
+        <TextBlock TextWrapping="Wrap" Margin="0,6,0,0"
+                    Text="更新了：" />
+    </StackPanel>
+</local:MyCard>
+
+<local:MyCard Title="常用键位展示" Margin="0,0,0,15" CanSwap="True" IsSwaped="False">
+	<StackPanel Margin="25,40,23,15">
+		<local:MyHint Text="像Ctrl+A这样的组合键，可以先按Ctrl再按A，也可以两个同时按，但不能先按A再按Ctrl！" />
+        <TextBlock TextWrapping="Wrap" Margin="0,6,0,0"
+                    Text="常用键位：" />
+        <TextBlock TextWrapping="Wrap" Margin="0,6,0,0"
+                    Text="连锁挖矿" />       
+		<local:MyHint Margin="0,8,0,2" IsWarn="False"
+                    Text="以下为更改过的键位：" />      
+        <TextBlock TextWrapping="Wrap" Margin="0,6,0,0"
+                    Text="JEI添加|移除书签 原按A，现按Ctrl+A ；FTB连锁挖矿 原按~，现按Ctrl+R ；Oculus光影选择 原按O，现按Ctrl+O" />           
+	</StackPanel>
+</local:MyCard>
+
+<local:MyCard Title="关于作者（）" Margin="0,0,0,15" CanSwap="True" IsSwaped="False">
+    <StackPanel Margin="25,40,23,15">
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4"
+                    Text="出现什么问题可以去问问他" />
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,10"
+                    Text="QQ：3155935711，Q群1072683257" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <local:MyButton Grid.Column="0" Margin="0,0,10,0" Height="35"
+                        Text="复制QQ号" EventType="复制文本" EventData="3155935711"/>
+            <local:MyButton Grid.Column="1" Margin="0,0,10,0" Height="35" 
+                        Text="复制Q群号" EventType="复制文本" EventData="1072683257"/>
+            <local:MyButton Grid.Column="2" Margin="0,0,10,0" Height="35" 
+                        Text="关注B站账号" EventType="打开网页" EventData="https://space.bilibili.com/1810535824" ToolTip="关注一下吧awa" />
+        </Grid>
+    </StackPanel>
+</local:MyCard>
+
+<!-- 
+
+全部通用的属性：
+ - Width、Height：设置宽度与高度
+ - ToolTip：设置鼠标指向时的提示文本
+ - Background：调整背景颜色（十六进制字符串，例如 #FF010203 代表 ARGB 中的 255,1,2,3。前两位代表不透明度，FF 为全不透明，00 为全透明）
+ - Margin：调整外边距（格式为 左,上,右,下。例如 Margin="0,0,0,2" 即为 2 单位的下边距）
+
+TextBlock（纯文本）：
+ - Text：设置显示的文本（如果要使用引号等特殊字符，自行百度 XAML 转义）
+ - TextWrapping：开启自动换行
+ - FontSize：设置字号
+ - FontWeight：设置为 Bold 时，文字加粗
+ - Foreground：调整前景颜色（十六进制字符串，例如 #FF010203 代表 ARGB 中的 255,1,2,3。前两位代表不透明度，FF 为全不透明，00 为全透明）
+ - HorizontalAlignment：设置对齐方式（Left、Center、Right）
+
+Image（图片）：
+ - Source：要显示的图片的网址
+ - Foreground：调整前景颜色（十六进制字符串，例如 #FF010203 代表 ARGB 中的 255,1,2,3。前两位代表不透明度，FF 为全不透明，00 为全透明）
+ - HorizontalAlignment：设置对齐方式（Left、Center、Right）
+
+local:MyCard（卡片）：
+ - Title：设置显示的标题文本
+ - CanSwap：这张卡片是否可以折叠，True 为是，False 为否
+ - IsSwaped：这张卡片是否默认折叠，要求 CanSwap 必须为 True
+ - Foreground：调整前景颜色（十六进制字符串，例如 #FF010203 代表 ARGB 中的 255,1,2,3。前两位代表不透明度，FF 为全不透明，00 为全透明）
+ - HorizontalAlignment：设置对齐方式（Left、Center、Right）（使用时，CanSwap 属性需为 False）
+
+local:MyHint（提示条）：
+ - Text：设置显示的文本（&#xA; 代表换行）
+ - IsWarn：设置为 True 代表警告样式，False 代表提示样式
+ - HorizontalAlignment：设置对齐方式（Left、Center、Right）
+
+local:MyButton（按钮）：
+ - Text：设置显示的文本
+ - Padding：设置内边距，格式与 Margin 一致
+ - ColorType：设置颜色主题（Highlight 为当前启动器的主题颜色，Red 为红色，默认为黑色）
+ - EventType、EventData：触发特定事件
+ - HorizontalAlignment：设置对齐方式（Left、Center、Right）
+
+local:MyTextButton（文本按钮）：
+ - Text：设置显示的文本
+ - EventType、EventData：触发特定事件
+ - Foreground：调整前景颜色（十六进制字符串，例如 #FF010203 代表 ARGB 中的 255,1,2,3。前两位代表不透明度，FF 为全不透明，00 为全透明）
+ - HorizontalAlignment：设置对齐方式（Left、Center、Right）
+
+local:MyListItem（列表项）：
+ - Logo：列表项的图标（所指定的可以是链接也可以是文件路径）
+ - Title：列表项的大标题
+ - Info：列表项的详细信息，它将会以灰色显示在大标题下方
+ - Type：若留空仅单纯展示信息，设置为 Clickable 触发相应活动
+
+-->
