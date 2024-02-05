@@ -12,7 +12,7 @@
         <TextBlock TextWrapping="Wrap" Margin="0,0,0,10"
                     Text="往更多内容请下滑" />
 	<local:MyIconTextButton Margin="0,4,0,8" Height="35" HorizontalAlignment="Center"
-                    Text="自动更新整合包 简介" EventType="打开文件" EventData="aaa.jar"/>
+                    Text="点我刷新公告" EventType="刷新主页" ToolTip="获取新公告"/>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
@@ -25,8 +25,6 @@
                 Text="下载Java环境" EventType="下载文件" EventData="https://download.oracle.com/java/17/archive/jdk-17.0.10_windows-x64_bin.exe" ToolTip="下载JDK17，安装完后请重启一次"/>
 	    <local:MyButton Grid.Column="2" Margin="0,0,10,0" Height="35" ColorType="Highlight"
                 Text="自动更新整合包" EventType="打开文件" EventData="aaa.jar"/>
-	    <local:MyButton Grid.Column="3" Margin="0,0,10,0" Height="35" 
-                Text="获取新的公告" EventType="刷新主页" ToolTip="获取新公告" />
         </Grid>
     </StackPanel>
 </local:MyCard>
