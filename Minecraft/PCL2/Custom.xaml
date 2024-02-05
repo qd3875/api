@@ -11,7 +11,7 @@
                     Text="如果你是初次使用，建议先进行一次自动更新，若下载失败请到群内下载最新文件解压覆盖" />
         <TextBlock TextWrapping="Wrap" Margin="0,0,0,10"
                     Text="往更多内容请下滑" />
-	<local:MyIconTextButton Margin="0,4,0,8" Height="35" HorizontalAlignment="Center" Image Source="https://i.nsoer.top/api/IconSVG/download-solid.svg" Width="24" Height="24"/
+	<local:MyIconTextButton Margin="0,4,0,8" Height="35" HorizontalAlignment="Center" Image="https://i.nsoer.top/api/IconSVG/download-solid.svg" Width="24" Height="24"
                     Text="点我刷新公告" EventType="刷新主页" ToolTip="获取新公告"/>
         <Grid>
             <Grid.ColumnDefinitions>
