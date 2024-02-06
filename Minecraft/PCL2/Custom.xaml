@@ -9,10 +9,19 @@
                     Text="服务器使用RadminLAN或者链接与你们连接，若没有RadminLAN，请点击下载按钮，使用教程在群里" />
         <TextBlock TextWrapping="Wrap" Margin="0,0,0,10"
                     Text="如果你是初次使用，请先进行一次自动更新，若下载失败请到群内下载最新文件解压覆盖" />
-        <TextBlock TextWrapping="Wrap" Margin="0,0,0,10"
-                    Text="往更多内容请下滑" />
-	<local:MyIconTextButton Margin="0,4,0,8" Height="35" HorizontalAlignment="Center"
-                    Text="点我刷新公告" EventType="刷新主页" ToolTip="获取新公告"/>
+         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <local:MyButton Grid.Column="0" Margin="0,0,10,6" Height="35" ColorType="Highlight"
+                Text="自动更新整合包" EventType="打开文件" EventData="../McPatchClient.jar"/>
+	    <local:MyButton Grid.Column="1" Margin="0,0,10,6" Height="35"
+                Text="刷新公告" EventType="刷新主页" EventData="https://download.oracle.com/java/17/archive/jdk-17.0.10_windows-x64_bin.exe"/>
+	    <local:MyButton Grid.Column="2" Margin="0,0,10,6" Height="35"
+                Text="暂无" EventType="刷新主页" EventData="https://download.radmin-lan.cn/download/files/Radmin_LAN_1.3.4570.5.exe" ToolTip=""/>
+        </Grid>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
@@ -20,7 +29,7 @@
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
             <local:MyButton Grid.Column="0" Margin="0,0,10,0" Height="35" ColorType="Highlight"
-                Text="自动更新整合包" EventType="打开文件" EventData="../McPatchClient.jar"/>
+                Text="在桌面创建快捷方式" EventType="打开文件" EventData="kjfs.bat" ToolTip="若更改了默认路径，则创建出的图标为空白项，需手动指定一次PCL2"/>
 	    <local:MyButton Grid.Column="1" Margin="0,0,10,0" Height="35"
                 Text="下载Java环境" EventType="下载文件" EventData="https://download.oracle.com/java/17/archive/jdk-17.0.10_windows-x64_bin.exe" ToolTip="下载JDK17，安装完后请重启一次"/>
 	    <local:MyButton Grid.Column="2" Margin="0,0,10,0" Height="35"
@@ -29,18 +38,31 @@
     </StackPanel>
 </local:MyCard>
 
-<local:MyCard Title="更新日志" Margin="0,0,0,15" CanSwap="True" IsSwaped="False">
+<local:MyCard Title="公告" Margin="0,0,0,15" CanSwap="True" IsSwaped="False">
     <StackPanel Margin="25,40,23,15">
+		<local:MyHint Text="重要！请把60+客户端命名为六零加客户端；将mod枪械工坊更换为" />
         <local:MyHint Margin="0,8,0,2" IsWarn="False"
                     Text="目前最新版本为Beta v1.0.0" />         
         <TextBlock TextWrapping="Wrap" Margin="0,6,0,0"
-                    Text="更新了：" />
+                    Text="变化：" />
+        <TextBlock TextWrapping="Wrap" Margin="0,6,0,0"
+                    Text="" />
+        <TextBlock TextWrapping="Wrap" Margin="0,6,0,0"
+                    Text="" />
+        <TextBlock TextWrapping="Wrap" Margin="0,6,0,0"
+                    Text="" />
+        <TextBlock TextWrapping="Wrap" Margin="0,6,0,0"
+                    Text="" />
+        <TextBlock TextWrapping="Wrap" Margin="0,6,0,0"
+                    Text="" />
+        <TextBlock TextWrapping="Wrap" Margin="0,6,0,0"
+                    Text="" />
     </StackPanel>
 </local:MyCard>
 
 <local:MyCard Title="常用键位展示" Margin="0,0,0,15" CanSwap="True" IsSwaped="False">
 	<StackPanel Margin="25,40,23,15">
-		<local:MyHint Text="像Ctrl+A这样的组合键，可以先按Ctrl再按A，也可以两个同时按，但不能先按A再按Ctrl！" />
+		<local:MyHint Text="像Ctrl+A，可先按Ctrl再按A，或者两个同时按，但不能先按A再按Ctrl！" />
         <TextBlock TextWrapping="Wrap" Margin="0,6,0,0"
                     Text="常用键位：" />
         <TextBlock TextWrapping="Wrap" Margin="0,6,0,0"
