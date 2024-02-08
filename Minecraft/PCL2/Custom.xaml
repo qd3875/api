@@ -40,23 +40,14 @@
 
 <local:MyCard Title="公告" Margin="0,0,0,15" CanSwap="True" IsSwaped="False">
     <StackPanel Margin="25,40,23,15">
-		<local:MyHint Text="重要！请把60+客户端命名为六零加客户端；将mod枪械工坊更换为" />
         <local:MyHint Margin="0,8,0,2" IsWarn="False"
-                    Text="目前最新版本为Beta v1.0.0" />         
+                    Text="目前最新版本为Re v1.1.1" />         
         <TextBlock TextWrapping="Wrap" Margin="0,6,0,0"
-                    Text="变化：" />
+                    Text="1.1.1更新了玩法，增加了冰火之歌和屠夫乐事等mod" />
         <TextBlock TextWrapping="Wrap" Margin="0,6,0,0"
-                    Text="" />
+                    Text="1.0.1更新了资源，增加了光影和材质包" />
         <TextBlock TextWrapping="Wrap" Margin="0,6,0,0"
-                    Text="" />
-        <TextBlock TextWrapping="Wrap" Margin="0,6,0,0"
-                    Text="" />
-        <TextBlock TextWrapping="Wrap" Margin="0,6,0,0"
-                    Text="" />
-        <TextBlock TextWrapping="Wrap" Margin="0,6,0,0"
-                    Text="" />
-        <TextBlock TextWrapping="Wrap" Margin="0,6,0,0"
-                    Text="" />
+                    Text="1.0.0最基础更新" />
     </StackPanel>
 </local:MyCard>
 
